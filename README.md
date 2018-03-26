@@ -7,7 +7,8 @@ using soundcloud api for comparing bands
 
 ### Installing
 ```
-$ git clone https://github.com/eladgilboa/soundCloud-bands
+$ git clone https://github.com/eladgilboa/soundCloud-bands.git
+
 npm install
 ```
 
