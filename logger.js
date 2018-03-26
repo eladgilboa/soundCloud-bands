@@ -1,9 +1,8 @@
 
 var winston = require('winston');
-//require('winston-mongodb');
 var db = require('./db');
-const Transport = require('winston-transport');
-const util = require('util');
+var Transport = require('winston-transport');
+var util = require('util');
 
 class MongoDB extends Transport {
   constructor(opts) {
@@ -13,10 +12,9 @@ class MongoDB extends Transport {
 
   log(info, callback) {
     var collectionName = info.level === 'error' ? 'error' : 'result';
-    this.db.get().collection('collectionName').insertOne(info,function(err, res){
+    this.db.get().collection(collectionName).insertOne(info,function(err, res){
       if (err)
         throw err;
-      console.log('insert: ', info);
     });
   }
 };

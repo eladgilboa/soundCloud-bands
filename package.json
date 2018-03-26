@@ -1,10 +1,11 @@
 {
-  "name": "sound-cloud-service",
+  "name": "soundCloud-band",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node  index.js",
+    "start": "open http://localhost:3000 && node index.js",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:3000\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,7 +20,10 @@
     "express": "^4.16.3",
     "moment-timezone": "^0.5.14",
     "mongodb": "^3.0.5",
-    "winston": "^3.0.0-rc3",
-    "winston-mongodb": "^4.0.0-rc1"
+    "winston": "^3.0.0-rc3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "http-server": "^0.11.1"
   }
 }
